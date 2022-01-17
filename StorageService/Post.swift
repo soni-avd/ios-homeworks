@@ -7,26 +7,30 @@
 //
 import UIKit
 
-struct Post {
+public struct Post {
     
-    let title: String
+    public let title: String
+    public init(title: String) {
+           self.title = title
+       }
+
 }
-struct PostInfo {
-    let author: String
-    let description: String
-    let image: UIImage
-    let likes: Int
-    let views: Int
+public struct PostInfo {
+    public let author: String
+    public let description: String
+    public let image: UIImage
+    public let likes: Int
+    public let views: Int
 }
-struct PhotoProfile {
-    let label: String
-    let photo1: UIImage
-    let photo2: UIImage
-    let photo3: UIImage
-    let photo4: UIImage
+public struct PhotoProfile {
+    public let label: String
+    public let photo1: UIImage
+    public let photo2: UIImage
+    public let photo3: UIImage
+    public let photo4: UIImage
 }
-struct Storage {
-    static let tableModel = [
+public struct Storage {
+    public static let tableModel = [
         PostInfo(author: "Elton John",
                  description: "She packed my bags last night pre-flight, \nZero hour, nine a.m. \nAnd I'm gonna be high as a kite by then \nI miss the earth so much, I miss my wife. \nIt's lonely out in space \nOn such a timeless flight",
                  image: #imageLiteral(resourceName: "rocket"),
@@ -50,7 +54,7 @@ struct Storage {
     ]
 }
 
-struct StoragePhotoProfile {
-    static let tableModel = PhotoProfile(label: "Photos", photo1: #imageLiteral(resourceName: "1.jpg"), photo2: #imageLiteral(resourceName: "2.jpg"), photo3: #imageLiteral(resourceName: "3.jpg"), photo4: #imageLiteral(resourceName: "4.jpg"))
+public struct StoragePhotoProfile {
+    public static let tableModel = PhotoProfile(label: "Photos", photo1: #imageLiteral(resourceName: "1.jpg"), photo2: #imageLiteral(resourceName: "2.jpg"), photo3: #imageLiteral(resourceName: "3.jpg"), photo4: #imageLiteral(resourceName: "4.jpg"))
     
 }
