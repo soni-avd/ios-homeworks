@@ -13,6 +13,13 @@ class ProfileViewController: UIViewController {
     
     private lazy var profileTableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .grouped)
+        
+       #if DEBUG
+        tv.backgroundColor = .cyan
+        #else
+        tv.backgroundColor = .lightGray
+        #endif
+        
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.delegate = self
         tv.dataSource = self
