@@ -86,8 +86,18 @@ class LogInViewController: UIViewController {
     
     @objc func buttonTapped() {
         print("button tapped")
-        let profileViewController = ProfileViewController()
-        navigationController?.pushViewController(profileViewController, animated: true)
+#if DEBUG
+        let userService = TestUserService()
+#else
+        let userService = CurrentService()
+#endif
+        let userName: String = ""
+        if userName != userService.fullName {
+            ProfileHeaderView().profileTitle.text = "undefined user"
+        }
+        let profileVC = ProfileViewController(userService: userService, userName: userName)
+        self.navigationController?.pushViewController(profileVC, animated: true)
+
     }
     
     //    MARK: viewDidLoad
@@ -99,8 +109,8 @@ class LogInViewController: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         [logInImage,stackLogIn,logInButton].forEach{
             containerView.addSubview($0) }
-            stackLogIn.addArrangedSubview(logInEmail)
-            stackLogIn.addArrangedSubview(logInPassword)
+        stackLogIn.addArrangedSubview(logInEmail)
+        stackLogIn.addArrangedSubview(logInPassword)
     }
     
     override func viewWillAppear(_ animated: Bool) {
