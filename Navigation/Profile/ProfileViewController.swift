@@ -62,6 +62,28 @@ class ProfileViewController: UIViewController {
     }()
     
     private var currentAnimation = 0
+    
+    var userService: UserService
+    var userName: String
+    
+    init(userService: UserService, userName: String) {
+        #if DEBUG
+        self.userService = TestUserService()
+        #else
+        self.userService = CurrentService()
+        #endif
+        self.userName = userName
+        hv.profileImage.image = userService.avatar
+        hv.profileTitle.text = userService.fullName
+        hv.profileInfo.text = userService.status
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(profileTableView)
@@ -92,6 +114,18 @@ class ProfileViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(constraints)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     @objc func closeAnimation() {
         print(#function)
         
