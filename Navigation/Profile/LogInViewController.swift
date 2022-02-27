@@ -8,6 +8,19 @@
 
 import UIKit
 
+protocol LogInViewControllerDelegate {
+    func checkPassword(logIn: String, psswrd: String) -> Bool
+    
+}
+
+class LogInInspector: LogInViewControllerDelegate {
+    func checkPassword(logIn: String, psswrd: String) -> Bool {
+        let checker = Checker.shared.checkLoginAndPassword(login: logIn, password: psswrd)
+         return checker
+     }
+    
+}
+
 class LogInViewController: UIViewController {
     
     let logInImage: UIImageView = {
@@ -80,6 +93,8 @@ class LogInViewController: UIViewController {
     
     var containerView = UIView()
     
+    var delegate: LogInViewControllerDelegate?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -96,7 +111,14 @@ class LogInViewController: UIViewController {
             ProfileHeaderView().profileTitle.text = "undefined user"
         }
         let profileVC = ProfileViewController(userService: userService, userName: userName)
-        self.navigationController?.pushViewController(profileVC, animated: true)
+
+        if delegate?.checkPassword(logIn: logInEmail.text!, psswrd: logInPassword.text!) == true {
+        navigationController?.pushViewController(profileVC, animated: true)
+            print("button tapped")
+        } else {
+          print("wrong")
+        }
+
 
     }
     
@@ -111,6 +133,7 @@ class LogInViewController: UIViewController {
             containerView.addSubview($0) }
         stackLogIn.addArrangedSubview(logInEmail)
         stackLogIn.addArrangedSubview(logInPassword)
+        delegate = LogInInspector()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -20,6 +20,7 @@
 		E3184A9125A8869E00FF86E9 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3184A9025A8869E00FF86E9 /* ProfileHeaderView.swift */; };
 		E3184A9425A886BF00FF86E9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3184A9325A886BF00FF86E9 /* ProfileViewController.swift */; };
 		E328E94225C1A49A005BDBEB /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328E94125C1A49A005BDBEB /* ProfileTableViewCell.swift */; };
+		E36A599927CB8D4300536A3F /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A599827CB8D4300536A3F /* Checker.swift */; };
 		E37C818127AD863400C85696 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37C818027AD863400C85696 /* UserService.swift */; };
 		E3963A772778B4BA00B7812A /* StorageService.docc in Sources */ = {isa = PBXBuildFile; fileRef = E3963A762778B4BA00B7812A /* StorageService.docc */; };
 		E3963A782778B4BA00B7812A /* StorageService.h in Headers */ = {isa = PBXBuildFile; fileRef = E3963A752778B4BA00B7812A /* StorageService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,6 +80,7 @@
 		E3184A9025A8869E00FF86E9 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E3184A9325A886BF00FF86E9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E328E94125C1A49A005BDBEB /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E36A599827CB8D4300536A3F /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		E37C818027AD863400C85696 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E3963A732778B4BA00B7812A /* StorageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StorageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3963A752778B4BA00B7812A /* StorageService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorageService.h; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				060782BF250CE27A00A87020 /* Info.plist */,
 				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
 				060782C7250CEE5D00A87020 /* PostViewController.swift */,
+				E36A599827CB8D4300536A3F /* Checker.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37C818127AD863400C85696 /* UserService.swift in Sources */,
+				E36A599927CB8D4300536A3F /* Checker.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
 				E3AA38B725C41BE4003E4FA2 /* PhotosViewController.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
