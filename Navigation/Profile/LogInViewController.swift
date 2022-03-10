@@ -20,6 +20,15 @@ class LogInInspector: LogInViewControllerDelegate {
      }
     
 }
+protocol LoginFactory {
+    func getLogIn() -> LogInInspector
+}
+struct MyLogInFactory: LoginFactory {
+    let inspector = LogInInspector()
+    func getLogIn() -> LogInInspector {
+        return inspector
+    }
+}
 
 class LogInViewController: UIViewController {
     
@@ -133,7 +142,7 @@ class LogInViewController: UIViewController {
             containerView.addSubview($0) }
         stackLogIn.addArrangedSubview(logInEmail)
         stackLogIn.addArrangedSubview(logInPassword)
-        delegate = LogInInspector()
+//        delegate = LogInInspector()
     }
     
     override func viewWillAppear(_ animated: Bool) {
